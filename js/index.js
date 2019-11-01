@@ -1,44 +1,44 @@
 const siteContent = {
-	nav            : {
-		'nav-item-1' : 'Services',
-		'nav-item-2' : 'Product',
-		'nav-item-3' : 'Vision',
-		'nav-item-4' : 'Features',
-		'nav-item-5' : 'About',
-		'nav-item-6' : 'Contact',
-		'img-src'    : 'img/logo.png',
+	'nav': {
+		'nav-item-1': 'Services',
+		'nav-item-2': 'Product',
+		'nav-item-3': 'Vision',
+		'nav-item-4': 'Features',
+		'nav-item-5': 'About',
+		'nav-item-6': 'Contact',
+		'img-src': 'img/logo.png',
 	},
-	cta            : {
-		h1        : 'DOM Is Awesome',
-		button    : 'Get Started',
-		'img-src' : 'img/header-img.png',
+	'cta': {
+		'h1': 'DOM Is Awesome',
+		'button': 'Get Started',
+		'img-src': 'img/header-img.png',
 	},
-	'main-content' : {
-		'features-h4'      : 'Features',
-		'features-content' :
+	'main-content': {
+		'features-h4': 'Features',
+		'features-content':
 			'Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
-		'about-h4'         : 'About',
-		'about-content'    :
+		'about-h4': 'About',
+		'about-content':
 			'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
-		'middle-img-src'   : 'img/mid-page-accent.jpg',
-		'services-h4'      : 'Services',
-		'services-content' :
+		'middle-img-src': 'img/mid-page-accent.jpg',
+		'services-h4': 'Services',
+		'services-content':
 			'Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
-		'product-h4'       : 'Product',
-		'product-content'  :
+		'product-h4': 'Product',
+		'product-content':
 			'Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
-		'vision-h4'        : 'Vision',
-		'vision-content'   :
+		'vision-h4': 'Vision',
+		'vision-content':
 			'Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
 	},
-	contact        : {
-		'contact-h4' : 'Contact',
-		address      : '123 Way 456 Street Somewhere, USA',
-		phone        : '1 (888) 888-8888',
-		email        : 'sales@greatidea.io',
+	'contact': {
+		'contact-h4': 'Contact',
+		'address': '123 Way 456 Street Somewhere, USA',
+		'phone': '1 (888) 888-8888',
+		'email': 'sales@greatidea.io',
 	},
-	footer         : {
-		copyright : 'Copyright Great Idea! 2018',
+	'footer': {
+		'copyright': 'Copyright Great Idea! 2018',
 	},
 };
 
@@ -57,26 +57,32 @@ const home = document.createElement('a');
 const store = document.createElement('a');
 
 // const cta = document.querySelector('.cta'); // May not need.
-console.log(document.querySelector('.cta-text')); //returning null
-const ctaText = document.querySelector('.cta-text').childNodes; //childNodes?
+//returning null
+const ctaText = document.querySelector('.cta-text h1'); //childNodes?
+const button = document.querySelector('button');
+// console.log(ctaText);
 
 const ctaImg = document.querySelector('#cta-img');
-const ctaTextArray = Array.from(ctaText);
-console.log(ctaTextArray);
+// const ctaTextArray = Array.from(ctaText);
+// console.log(ctaTextArray);
 
-const topContent = document.querySelector('.top-content').childNodes;
-const topContentFeatures = topContent[1].childNodes;
-const topContentAbout = topContent[3].childNodes;
+// ----------------------------------------------------------------
+// const topContent = document.querySelector('.top-content'); //childNodes?
+// const topContentFeatures = topContent[1]; //childNodes?
+// const topContentAbout = topContent[3]; //childNodes?
+const h4 = document.querySelectorAll("h4");
+const h4Array = Array.from(h4);
 
 const middleImg = document.querySelector('#middle-img');
 
-const bottomContent = document.querySelector('.bottom-content').childNodes;
-const bottomServices = bottomContent[1].childNodes;
-const bottomProduct = bottomContent[3].childNodes;
-const bottomVision = bottomContent[5].childNodes;
+const bottomContent = document.querySelector('.text-content h4'); //childNodes?
 
-const contact = document.querySelector('.contact').childNodes;
-const footer = document.querySelector('footer').childNodes;
+// const bottomServices = bottomContent[1]; //childNodes?
+// const bottomProduct = bottomContent[3]; //childNodes?
+// const bottomVision = bottomContent[5]; //childNodes?
+
+const contact = document.querySelector('.contact'); //childNodes?
+const footer = document.querySelector('footer'); //childNodes?
 
 // Fun, fun, functions!
 
@@ -100,24 +106,31 @@ function addToNav() {
 	logo.setAttribute('src', siteContent['nav']['img-src']);
 }
 
+function mainContent() {
+
+}
+
+
 function ctaSection() {
 	// Styling - stretch
 	button.style.background = 'lightgrey';
 	ctaImg.style.border = '2px solid black';
 	ctaImg.style.borderRadius = '10%';
 	// cta
-	for (let i = 1; i < ctaTextArray.length; i++) {
-		if (i === 1) {
-			const ctaH1Text = siteContent['cta']['h1'].split(' ');
-			ctaTextArray[i].innerHTML = ctaH1Text.join('<br>');
-		}
-		if (i === 3) {
-			ctaTextArray[i].textContent = siteContent['cta']['button'];
-		}
-	}
+	// for (let i = 1; i < ctaTextArray.length; i++) {
+	// 	if (i === 1) {
+	// 		const ctaH1Text = siteContent['cta']['h1'].split(' ');
+	// 		ctaTextArray[i].innerHTML = ctaH1Text.join('<br>');
+	// 	}
+	// 	if (i === 3) {
+	// 		ctaTextArray[i].textContent = siteContent['cta']['button'];
+	// 	}
+	// }
+	ctaText.textContent = siteContent['cta']['h1'];
 	//Add cta img src
 	ctaImg.src = siteContent['cta']['img-src'];
 }
+// console.log(ctaText);
 
 //Add main content to site
 function addContent() {
