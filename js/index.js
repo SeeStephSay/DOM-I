@@ -129,4 +129,3 @@ p[7].textContent = siteContent.contact.email;
 
 // Copyright
 p[8].textContent = siteContent.footer.copyright;
-footer.style.color = "grey";
