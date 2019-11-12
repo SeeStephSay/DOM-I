@@ -69,8 +69,8 @@ home.textContent = "Home";
 home.style.color = "green";
 navBar.prepend(home);
 
-navBar.forEach((value, i) => value.textContent = siteContent.nav[`nav-item-${i + 1}`]);
-navBar.forEach(element => element.style.color = 'green');
+navLinks.forEach((a, i) => a.textContent = siteContent.nav[`nav-item-${i + 1}`]);
+navLinks.forEach(element => element.style.color = 'green');
 
 // for (let i = 0; i < navArray.length; i++) {
 //   navArray[i].textContent = siteContent['nav'][`nav-item-${i + 1}`];
@@ -95,6 +95,8 @@ h1.textContent = siteContent.cta.h1;
 
 let button = document.querySelector("button");
 button.textContent = siteContent.cta.button;
+button.style.background = "green";
+button.style.color = "snow";
 
 // Images
 let ctaImg = document.querySelector("#cta-img");
@@ -105,7 +107,7 @@ middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
 // Titles
 let h4 = document.querySelectorAll("h4");
-h4[0].textContent = siteContent["main-content"]["features=h4"];
+h4[0].textContent = siteContent["main-content"]["features-h4"];
 h4[1].textContent = siteContent["main-content"]["about-h4"];
 h4[2].textContent = siteContent["main-content"]["services-h4"];
 h4[3].textContent = siteContent["main-content"]["product-h4"];
@@ -127,7 +129,4 @@ p[7].textContent = siteContent.contact.email;
 
 // Copyright
 p[8].textContent = siteContent.footer.copyright;
-
-(function makePage() {
-  addToNav();
-})();
+footer.style.color = "grey";
